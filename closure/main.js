@@ -1,15 +1,10 @@
-
-function incrementFactory() {
-
-    let num = 0;
-    function increment() {
-
-        num = num + 1;
-        console.log(num);
+function addNumberFactory(num) {
+    function addNumber(value) {
+        return num + value;
     }
-    return increment;
+    return addNumber;
 }
 
-const increment = incrementFactory();
-
-increment();
+const add5 = addNumberFactory(5);
+const result = add5(10);
+console.log(result);
