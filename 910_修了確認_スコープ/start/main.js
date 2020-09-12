@@ -34,17 +34,37 @@ console.log(result);
 
 //つまりブロックスコープの外で変数を扱いたい場合は、変数を使用している部分と、変数宣言のスコープを同じ場所に設置する必要がある。
 
+
+
 /**
  * 問題２：
  * fn2内の記述を変更して、各コンソールで
  * 期待値を出力するように修正してください。
  */
+
+//var val = 'val1';
+//function fn2() {
+//console.log(val); // 期待値->'val1'
+
+//if (true) {
+//var val = 'val2';
+//console.log(val); // 期待値->'val2'
+//}
+
+//console.log(val); // 期待値->'val1'
+//}
+//fn2();
+
+//問題２の解説
+//期待値のようにコンソールに出力したい場合は、varをletに変更する必要がある。
+
+
 var val = 'val1';
 function fn2() {
     console.log(val); // 期待値->'val1'
 
     if (true) {
-        var val = 'val2';
+        let val = 'val2';
         console.log(val); // 期待値->'val2'
     }
 
@@ -64,3 +84,14 @@ fn2();
  * increment(); // 期待値->4
  */
 
+{
+    let num = 0;
+    function increment() {
+        num = num + 1;
+        console.log(num);
+    }
+}
+increment();
+increment();
+increment();
+increment();
